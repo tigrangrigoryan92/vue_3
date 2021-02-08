@@ -9,7 +9,6 @@ const App = {
     },
     items: [1, 2, 3, 4, 5, 6, 7]
   }),
-  computed: {},
   methods: {
     addItem() {
       this.items.unshift(this.$refs.myInput.value);
