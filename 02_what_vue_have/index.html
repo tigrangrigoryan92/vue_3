@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vue Basics</title>
+  <link rel="stylesheet" href="theme.css"/>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container pt-5" id="app" v-cloak>
+    <div class="card center">
+      <h2>{{ title }}</h2>
+<!--      <h2 v-text="title"></h2>-->
+<!--      <h2 v-once>{{title}}</h2>-->
+<!--      <button class="btn" @click="title='Changed Title'">Change Title</button>-->
+<!--      <h2 v-pre>{{ title }}</h2>-->
+<!--      <div v-html="myHtml"></div>-->
+
+      <ul class="list" v-if="items.length">
+<!--        <li-->
+<!--          v-for="item in 7"-->
+<!--          class="list-item"-->
+<!--        >-->
+<!--          {{ item }}.-->
+<!--        </li>-->
+<!--        <li class="list-item" v-for="(val, key) of person">-->
+<!--          <strong>{{ key }} </strong> : <span> {{ val }}</span>-->
+<!--        </li>-->
+        <li class="form-control">
+          <input type="text" @keyup.enter="addItem" ref="myInput">
+        </li>
+        <li
+          class="list-item pointer"
+          v-for="(item, idx) in items"
+          @click="items.splice(idx, 1)"
+          :key="item"
+        >
+          <strong>{{ item }}.</strong>&nbsp;
+          <input type="text" @click.stop.prevent>
+        </li>
+      </ul>
+      <p v-else>Nothing to show</p>
+      <p v-show="!items.length">Nothing to show</p>
+    </div>
+  </div>
+
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js"></script>
+</body>
+</html>
