@@ -51,7 +51,7 @@ const App = Vue.createApp({
     console.log('beforeUnmount');
   },
   unmounted() {
-    console.log('unmounted');
+    console.log('unmounted.');
   }
 })
 
