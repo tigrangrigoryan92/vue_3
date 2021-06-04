@@ -11,7 +11,7 @@
       <input type="password" id="password" v-model="password">
     </div>
 
-    <button class="btn primary" type="submit">Войти</button>
+    <button class="btn primary" type="submit">ВойтиTest</button>
 
 <!--    v-slot="{ navigate }"-->
 <!--    @click="navigate"      -->
